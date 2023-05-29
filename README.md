@@ -4,9 +4,7 @@
 
 ![Design preview for the Todo app coding challenge](/public/preview.png)
 
-### The challenge
-
-Here are the features:
+### Here are the features:
 - Add new todos to the list
 - Mark todos as complete
 - Delete todos from the list
