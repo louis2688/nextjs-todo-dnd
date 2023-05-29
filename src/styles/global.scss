@@ -1,0 +1,77 @@
+@import 'reset';
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
+@import 'breakpoints';
+
+:root {
+  --Check-BG-start: hsl(192, 100%, 67%);
+  --Check-BG-middle: hsl(220, 98%, 61%);
+  --Check-BG-end: hsl(280, 87%, 65%);
+
+  --Very-Light-Gray: hsl(0, 0%, 98%);
+  --Very-Dark-Blue: hsl(235, 21%, 11%);
+
+  --Light-Grayish-Blue: hsl(235, 9%, 61%);
+  --Dark-Grayish-Blue: hsl(234, 11%, 52%);
+
+  --white: hsl(0, 0%, 100%);
+  --Very-Dark-Desaturated-Blue: hsl(235, 24%, 19%);
+
+  --Light-Blue: hsl(234, 39%, 85%);
+  --Very-Dark-Grayish-Blue: hsl(235, 16%, 42%);
+
+  --Light-Gray: hsl(236, 32%, 92%);
+  --Dark-Light-Gray: hsl(235, 14%, 26%);
+
+  --Very-Dark-Grayish-Blue: hsl(235, 19%, 35%);
+  //background image
+  --bg-desktop-dark: url('../../public/bg-desktop-dark.jpg') no-repeat left
+    center/cover;
+  --bg-desktop-light: url('../../public/bg-desktop-light.jpg') no-repeat left
+    center/cover;
+  --bg-mobile-light: url('../../public/bg-mobile-light.jpg') no-repeat left
+    center/cover;
+  --bg-mobile-dark: url('../../public/bg-mobile-dark.jpg') no-repeat left
+    center/cover;
+}
+body {
+  min-height: 100vh;
+  background: var(--background);
+  font-family: 'Josefin Sans', sans-serif;
+  transition: background 0.2s ease-in-out;
+}
+
+body[data-theme='light'] {
+  --background: var(--Very-Light-Gray);
+  --todo-bg: var(--white);
+  --footer-text: var(--Light-Grayish-Blue);
+  --footer-hover: var(--Dark-Light-Gray);
+  --text: var(--Very-Dark-Grayish-Blue);
+  --lining: var(--Light-Gray);
+  --background-image: var(--bg-desktop-light);
+  @include breakpoint-down(small) {
+    --background-image: var(--bg-mobile-light);
+  }
+}
+body[data-theme='dark'] {
+  --background: var(--Very-Dark-Blue);
+  --todo-bg: var(--Very-Dark-Desaturated-Blue);
+  --footer-text: var(--Dark-Grayish-Blue);
+  --footer-hover: var(--Light-Blue);
+  --text: var(--Light-Blue);
+  --lining: var(--Very-Dark-Grayish-Blue);
+  --background-image: var(--bg-desktop-dark);
+
+  @include breakpoint-down(small) {
+    --background-image: var(--bg-mobile-dark);
+  }
+}
+
+.sr-only:not(:focus):not(:active) {
+  clip: rect(0 0 0 0);
+  clip-path: inset(100%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
