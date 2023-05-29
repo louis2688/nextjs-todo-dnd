@@ -6,6 +6,7 @@
 
 ### Here are the features:
 - Add new todos to the list
+- Edit todos from the list
 - Mark todos as complete
 - Delete todos from the list
 - Filter by all/active/complete todos
